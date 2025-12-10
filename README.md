@@ -4,7 +4,7 @@ A public API to interact with the Firework Wars Items Plugin
 ## Installation
 The API is hosted via JitPack. To include it in your project, add the following to your build file:
 
-For Gradke (Kotlin DSL):
+For Gradle (Kotlin DSL):
 ```kotlin
 repositories {
     maven { url = uri("https://jitpack.io") }
