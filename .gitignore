@@ -2,10 +2,5 @@
 /.gradle/
 /build/
 
-# Gradle Wrapper
-/gradle/wrapper/
-/gradlew
-/gradlew.bat
-
 # IntelliJ Bullshit
 /.idea/
