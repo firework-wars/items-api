@@ -15,7 +15,7 @@ dependencies {
 }
 ```
 
-For Gradle (Groovy DSL):
+For Gradle (Groovy):
 ```groovy
 repositories {
     maven { url 'https://jitpack.io' }
