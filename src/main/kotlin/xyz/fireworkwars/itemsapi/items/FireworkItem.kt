@@ -22,6 +22,26 @@ interface FireworkItem {
     fun isItem(itemStack: ItemStack?): Boolean
 
     /**
+     * Checks if this item is a gun. Current list of guns: `firework_rifle`, `firework_bayonet`, `firework_shotgun`, `rocket_launcher`, `wind_crossbow`
+     */
+    fun isGun(): Boolean
+
+    /**
+     * Checks if this item is ammo. Current list of ammo: `firework_rifle_ammo`, `firework_shotgun_ammo`, `rocket_launcher_ammo`, `wind_crossbow_ammo
+     */
+    fun isAmmo(): Boolean
+
+    /**
+     * Checks if this item is armor. Current list of armor: `military_helmet`, `combat_armor`, `heavy_armor`
+     */
+    fun isArmor(): Boolean
+
+    /**
+     * Checks if this item is consumable. Current list of consumables: `healing_potion`, `golden_apple`, `enchanted_golden_apple`
+     */
+    fun isConsumable(): Boolean
+
+    /**
      * Gets the base `ItemStack` for this item.
      *
      * @param amount The amount, 1 if not specified
