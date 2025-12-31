@@ -43,8 +43,29 @@ interface FireworkItem {
      * override the color via events.
      *
      * @param player The player to customize the item for
-     * @param color The color to apply to the item.
+     * @param color The color to apply to the item
      * @param amount The amount, 1 if not specified
      */
     fun getItem(player: Player, color: Color, amount: Int = 1): ItemStack
+
+    /**
+     * Takes the input `ItemStack` and customizes it for the specified player.
+     * Not all custom items have an implementation, in which case the input item is returned unmodified.
+     *
+     * @param item The `ItemStack` to modify
+     * @param player The player to customize the item for
+     * @see xyz.fireworkwars.itemsapi.events.PlayerItemColorEvent
+     */
+    fun editItem(item: ItemStack, player: Player): ItemStack
+
+    /**
+     * Takes the input `ItemStack` and customizes it for the specified player. **The color is forced to the given value.**
+     * Not all custom items have an implementation, in which case the input item is returned unmodified.
+     *
+     * @param item The `ItemStack` to modify
+     * @param player The player to customize the item for
+     * @param color The color to apply to the item
+     * @see xyz.fireworkwars.itemsapi.items.FireworkItem.editItem
+     */
+    fun editItem(item: ItemStack, player: Player, color: Color): ItemStack
 }
