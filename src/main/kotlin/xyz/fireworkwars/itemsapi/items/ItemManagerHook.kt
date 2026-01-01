@@ -1,5 +1,7 @@
 package xyz.fireworkwars.itemsapi.items
 
+import org.bukkit.NamespacedKey
+
 /**
  * Interface for interacting with the firework item manager
  */
@@ -19,4 +21,9 @@ interface ItemManagerHook {
      * @return `FireworkItem` or `null`
      */
     fun getItemById(id: String): FireworkItem?
+
+    /**
+     * Gets every `NamespacedKey` of the custom recipes registered by the items plugin
+     */
+    fun getCustomRecipeKeys(): Set<NamespacedKey>
 }
