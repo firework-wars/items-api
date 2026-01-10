@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack
  * @param enemy The player that's currently being tracked, may be null
  * @param enemyName The display name of the current target player, may be null. This value is used for the player tracker messages
  */
-class TrackerChoosePlayerEvent(val player: Player, val compass: ItemStack, var enemy: Player?, var enemyName: Component?) : Event() {
+class PlayerTrackerTargetEvent(player: Player, compass: ItemStack, enemy: Player?, var enemyName: Component?) : TrackerTargetEvent(player, compass, enemy) {
     companion object {
         @JvmStatic
         val HANDLER_LIST = HandlerList()
@@ -27,5 +27,9 @@ class TrackerChoosePlayerEvent(val player: Player, val compass: ItemStack, var e
 
     override fun getHandlers(): HandlerList {
         return HANDLER_LIST
+    }
+
+    fun getEnemy(): Player? {
+        return target as? Player
     }
 }
