@@ -9,12 +9,12 @@ repositories {
 
 dependencies {
     compileOnly(kotlin("stdlib"))
-    paperweight.paperDevBundle("1.21.4-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("26.1.2.build.66-stable")
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
