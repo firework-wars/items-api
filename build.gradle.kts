@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     compileOnly(kotlin("stdlib"))
-    paperweight.paperDevBundle("26.1.2.build.66-stable")
+    paperweight.paperDevBundle("26.1.2.build.+")
 }
 
 java {
