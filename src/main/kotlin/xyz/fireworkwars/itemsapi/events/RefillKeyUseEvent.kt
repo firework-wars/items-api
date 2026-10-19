@@ -1,26 +1,30 @@
 package xyz.fireworkwars.itemsapi.events
 
-import org.bukkit.block.Block
 import org.bukkit.entity.Player
-import org.bukkit.event.Cancellable
 import org.bukkit.event.Event
 import org.bukkit.event.HandlerList
+import org.bukkit.inventory.InventoryHolder
 
 /**
- * Called when a player uses a refill key on a chest.
+ * Called when a player right-clicks a container while holding a refill key.
+ *
+ * Fired for any container the player can click: chest blocks, barrels and other block inventories (their block
+ * state), as well as storage minecarts and chest boats (the entity itself). It is up to listeners to decide whether
+ * the container is one they handle.
+ *
+ * The key is opt-in: it is only consumed, and the container's own inventory only kept from opening, when a listener
+ * calls [accept]. If nobody accepts, the click behaves as if the player were holding any other item.
  *
  * @param player The player using the refill key
- * @param chest The chest block the key was used on
+ * @param container The clicked container's inventory holder
  */
-class RefillKeyUseEvent(val player: Player, val chest: Block) : Event(), Cancellable {
-    private var cancelled = false
+class RefillKeyUseEvent(val player: Player, val container: InventoryHolder) : Event() {
+    var isAccepted: Boolean = false
+        private set
 
-    override fun isCancelled(): Boolean {
-        return cancelled
-    }
-
-    override fun setCancelled(cancel: Boolean) {
-        cancelled = cancel
+    /** Claim this use: the key is consumed and the container does not open normally. */
+    fun accept() {
+        isAccepted = true
     }
 
     companion object {
