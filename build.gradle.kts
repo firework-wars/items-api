@@ -18,10 +18,8 @@ java {
     }
 }
 
-version = ProcessBuilder("git", "describe", "--tags", "--always", "--dirty")
-    .directory(project.projectDir)
-    .start()
-    .inputStream
-    .bufferedReader()
-    .readText()
-    .trim()
+version = providers.exec {
+    commandLine("git", "describe", "--tags", "--always", "--dirty")
+    workingDir = projectDir
+    isIgnoreExitValue = true
+}.standardOutput.asText.get().trim()
