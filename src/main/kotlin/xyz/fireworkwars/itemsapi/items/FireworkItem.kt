@@ -22,12 +22,12 @@ interface FireworkItem {
     fun isItem(itemStack: ItemStack?): Boolean
 
     /**
-     * Checks if this item is a gun. Current list of guns: `firework_rifle`, `firework_bayonet`, `firework_shotgun`, `rocket_launcher`, `wind_crossbow`
+     * Checks if this item is a gun. Current list of guns: `firework_rifle`, `firework_bayonet`, `firework_shotgun`, `rocket_launcher`
      */
     fun isGun(): Boolean
 
     /**
-     * Checks if this item is ammo. Current list of ammo: `firework_rifle_ammo`, `firework_shotgun_ammo`, `rocket_launcher_ammo`, `wind_crossbow_ammo
+     * Checks if this item is ammo. Current list of ammo: `firework_rifle_ammo`, `firework_shotgun_ammo`, `rocket_launcher_ammo`
      */
     fun isAmmo(): Boolean
 
